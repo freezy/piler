@@ -48,7 +48,6 @@ js.addOb "namespaceob.second": true
 
 app.get "/namespace", (req, res) ->
   res.render "namespace.jade",
-   layout: false
    js: js.renderTags "mynamespace"
    css: css.renderTags "mynamespace"
 
