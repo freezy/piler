@@ -49,13 +49,9 @@ class LiveUpdateMixin
     @addExec clientUpdater
 
     if not userio
-      io = socketio.listen @app
+      io = socketio.listen @server
     else
       io = userio
-
-    # Why does not work?
-    io.configure ->
-      io.set 'log level', 0
 
     @io = io.of "/pile"
 
