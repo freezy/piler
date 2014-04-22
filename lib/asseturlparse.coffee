@@ -6,7 +6,7 @@ module.exports = p = (url) ->
 
   # remove qs
   url = _.first url.split "?"
-  [__..., mode, cachekey, filename] = url.split "/"
+  [__..., mode, filename] = url.split "/"
 
 
   if mode is "dev"
