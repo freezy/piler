@@ -122,7 +122,6 @@ class BasePile
 
 
   getSources: ->
-    devCacheKey = Date.now()
 
     # Start with plain urls
     sources = ([u] for u in @urls)
@@ -131,7 +130,7 @@ class BasePile
       sources.push ["#{ @urlRoot }min/#{ @pileHash }/#{ @name }.#{ @ext }"]
     else
       for ob in @code
-        sources.push ["#{ @urlRoot }dev/#{ devCacheKey }/#{ @name }.#{ ob.type }-#{ ob.getId() }.#{ @ext }", "id=\"pile-#{ ob.getId() }\""]
+        sources.push ["#{ @urlRoot }dev/#{ @name }.#{ ob.type }-#{ ob.getId() }.#{ @ext }", "id=\"pile-#{ ob.getId() }\""]
     return sources
 
 
